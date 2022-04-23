@@ -36,6 +36,7 @@ game.setScore(0)
 basic.forever(function () {
     basic.pause(alienDelay)
     alien.move(1)
+    alien.ifOnEdgeBounce()
     // drop a bomb at random
     if (Math.randomBoolean()) {
         bomb = game.createSprite(alien.get(LedSpriteProperty.X), 1)
@@ -50,5 +51,4 @@ basic.forever(function () {
         bomb.delete()
         alien.set(LedSpriteProperty.Blink, 0)
     }
-    alien.ifOnEdgeBounce()
 })
